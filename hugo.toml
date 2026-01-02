@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313/'  # 测试时用本地；上线时改成 GitHub URL
+baseURL = 'https://nmilk1284-dev.github.io/'  # 测试时用本地；上线时改成 GitHub URL
 languageCode = 'en-us'  # 或 'zh-cn' 如果中文
 title = '我的博客'
 theme = 'PaperMod'
