@@ -1,3 +1,4 @@
+
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
 name: Deploy Hugo site to Pages
 
@@ -31,7 +32,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.154.1  # 更新到最新版本
+      HUGO_VERSION: 0.154.1  # 更新到最新版本（extended 支持高级功能）
     steps:
       - name: Install Hugo CLI
         run: |
@@ -43,7 +44,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: Update Submodules  # 添加此步，确保主题完全拉取
+      - name: Update Submodules  # 确保主题拉取
         run: git submodule update --init --recursive
       - name: Setup Pages
         id: pages
@@ -57,8 +58,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --verbose  # 添加 verbose 便于调试 Actions 日志
+            --baseURL "${{ steps.pages.outputs.base_url }}/"  # 移除 --verbose
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
