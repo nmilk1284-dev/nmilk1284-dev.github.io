@@ -1,0 +1,16 @@
+baseURL = 'http://localhost:1313/'  # 测试时用本地；上线时改成 GitHub URL
+languageCode = 'en-us'  # 或 'zh-cn' 如果中文
+title = '我的博客'
+theme = 'PaperMod'
+
+[params]
+  ShowBreadCrumbs = true
+  ShowToc = true
+  TocOpen = false
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
